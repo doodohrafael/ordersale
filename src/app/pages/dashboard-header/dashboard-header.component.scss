@@ -7,6 +7,9 @@
   border: none !important;
   margin: 0px;
   padding: 1px;
+  padding-right: 0px;
+  border-radius: 0px !important;
+  
 //   background: linear-gradient(to right, #6a11cb, #2575fc);
 }
 
@@ -16,21 +19,37 @@
 ::ng-deep .p-panelmenu-header-link {
     background: linear-gradient(to right, #6a11cb, #2575fc);
     color: white !important;
+    margin-top: -1px;
 }
 
 ::ng-deep .p-panelmenu-header-link:hover {
     border: #2575fc solid 1px;
 }
 
-::ng-deep .p-panelmenu-submenu-icon {
-    color: #fff !important;
-}
-
-::ng-deep .p-panelmenu-submenu-icon:hover {
-    color: #fff !important;
-}
-
 ::ng-deep .p-button-icon-only.p-button-rounded {
     margin-top: 10px;
     margin-left: 25px;
 }
+
+::ng-deep .p-panelmenu-item-link {
+    // background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #000 !important;
+}
+
+::ng-deep .p-panelmenu-item-link:hover {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    // color: #000 !important;
+    color: #fff !important;
+}
+
+::ng-deep .p-panelmenu-submenu-icon {
+    color: #000 !important;
+}
+
+::ng-deep .p-panelmenu-submenu-icon:hover {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+// ::ng-deep .p-panelmenu-submenu:hover {
+//     background: linear-gradient(to right, #6a11cb, #2575fc);
+// }
