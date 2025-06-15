@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
+import { DashboardHeaderComponent } from '../dashboard-header/dashboard-header.component';
 
 @Component({
   selector: 'os-dashboard',
-  imports: [MenuComponent],
+  imports: [MenuComponent, DashboardHeaderComponent],
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'

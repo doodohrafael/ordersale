@@ -1,0 +1,17 @@
+<p-toolbar [style]="{ 'border': 'none', 'margin-left': '60px', 'background': 'none'}" >
+    <ng-template #start>
+        <img 
+            src="assets/logo.png" 
+            alt="Logo" 
+            class="logo" 
+        />
+    </ng-template>
+    <ng-template #center>
+    </ng-template>
+    <ng-template #end>
+        <!-- <p-splitbutton label="Save" [model]="items" /> -->
+        <!-- <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" [style]="{ width: '32px', height: '32px' }" /> -->
+        <!-- <p-button icon="pi pi-user" severity="contrast" size="small" [rounded]="true" [raised]="true" /> -->
+        <p-speeddial [model]="items" direction="down" [style]="{ position: 'absolute', left: 'calc(95% - 2rem)', top: 0 }" />
+    </ng-template>
+</p-toolbar>

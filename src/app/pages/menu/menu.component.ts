@@ -56,7 +56,21 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-list'
           }
         ]
-      }
+      },
+      {
+        label: 'Usuários',
+        icon: 'pi pi-user',
+        items: [
+          {
+            label: 'Cadastrar usuário',
+            icon: 'pi pi-user-plus'
+          },
+          {
+            label: 'Ver usuários',
+            icon: 'pi pi-list'
+          }
+        ]
+      },
     ]
   }
 
