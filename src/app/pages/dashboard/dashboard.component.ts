@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
 import { DashboardHeaderComponent } from '../dashboard-header/dashboard-header.component';
 
@@ -10,5 +10,7 @@ import { DashboardHeaderComponent } from '../dashboard-header/dashboard-header.c
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
+
+  @Input() nameScreen: string = "Dashboard";
 
 }

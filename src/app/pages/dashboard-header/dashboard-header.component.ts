@@ -1,5 +1,5 @@
 import { AvatarModule } from 'primeng/avatar';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Toolbar } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -17,7 +17,8 @@ import { ToastModule } from 'primeng/toast';
 })
 export class DashboardHeaderComponent implements OnInit {
 
-  items: MenuItem[] = [];
+  @Input() nameScreen: string = "DashboardHeader";
+  public items: MenuItem[] = [];
 
   constructor(private messageService: MessageService) { }
 
