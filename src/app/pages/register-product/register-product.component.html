@@ -1,1 +1,7 @@
-<os-dashboard [nameScreen]="'Cadastrar Produto'"></os-dashboard>
+<os-dashboard [nameScreen]="'Cadastrar Produto'">
+    <form [formGroup]="formRegisterProduct">
+        <div class="card flex justify-center">
+            <input type="text" pInputText formControlName="name" placeholder="Nome do produto" />
+        </div>
+    </form>
+</os-dashboard>

@@ -1,5 +1,14 @@
-<os-dashboard-header [nameScreen]="nameScreen"></os-dashboard-header>
+<div class="dashboard-container">
+    <os-dashboard-header [nameScreen]="nameScreen"></os-dashboard-header>
 
-<div class="divisor-menu">
-    <os-menu></os-menu>
+    <div class="dashboard-content">
+        <div class="divisor-menu">
+            <os-menu></os-menu>
+        </div>
+        
+        <div class="dashboard-main">
+            <ng-content></ng-content>  <!-- Conteúdo inserido aqui (como o formulário) -->
+        </div>
+    </div>
+
 </div>

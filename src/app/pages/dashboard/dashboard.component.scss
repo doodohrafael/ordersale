@@ -1,6 +1,21 @@
+/* os-dashboard.component.css */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Opcional: ocupa toda a altura da tela */
+}
+
+.dashboard-content {
+    display: flex;
+    flex: 1; /* Preenche o espaço restante */
+}
+
 .divisor-menu {
-    border-right: #2575fc solid 5px; 
-    // border-top: #2575fc solid 5px; 
-    display: inline-block; 
-    height: 100vh;
+    width: 260px; /* Largura fixa para o menu */
+    background: #f8f9fa; /* Cor de fundo opcional */
+}
+
+.dashboard-main {
+    flex: 1; /* Ocupa o resto do espaço */
+    padding: 20px; /* Espaçamento interno */
 }
