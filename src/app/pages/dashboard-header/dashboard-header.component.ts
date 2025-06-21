@@ -18,7 +18,7 @@ import { NgClass } from '@angular/common';
 })
 export class DashboardHeaderComponent implements OnInit {
 
-  @Input() nameScreen: string = "DashboardHeader";
+  @Input() nameScreen: string = "";
   public items: MenuItem[] = [];
 
   constructor(private confirmationService: ConfirmationService, private messageService: MessageService) { }
