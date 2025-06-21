@@ -5,7 +5,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 @Component({
   selector: 'os-search-product',
   standalone: true,
-  imports: [SharedImports, DashboardComponent],
+  imports: [DashboardComponent, SharedImports],
   templateUrl: './search-product.component.html',
   styleUrl: './search-product.component.scss'
 })
