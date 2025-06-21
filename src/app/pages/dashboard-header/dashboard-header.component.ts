@@ -3,14 +3,15 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Toolbar } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { MenuItem, MessageService } from 'primeng/api';
-import { SpeedDial } from 'primeng/speeddial';
+import { MenuItem, MessageService, ConfirmationService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { ConfirmDialog } from 'primeng/confirmdialog';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'os-dashboard-header',
-  imports: [Toolbar, ButtonModule, InputTextModule, ToastModule, AvatarModule, SpeedDial],
-  providers: [MessageService],
+  imports: [Toolbar, ButtonModule, InputTextModule, ToastModule, AvatarModule, ConfirmDialog, NgClass],
+  providers: [MessageService, ConfirmationService],
   standalone: true,
   templateUrl: './dashboard-header.component.html',
   styleUrl: './dashboard-header.component.scss'
@@ -20,7 +21,7 @@ export class DashboardHeaderComponent implements OnInit {
   @Input() nameScreen: string = "DashboardHeader";
   public items: MenuItem[] = [];
 
-  constructor(private messageService: MessageService) { }
+  constructor(private confirmationService: ConfirmationService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.items = [
@@ -54,4 +55,23 @@ export class DashboardHeaderComponent implements OnInit {
     ];
   }
 
+  confirm() {
+    this.confirmationService.confirm({
+      header: 'Sair do sistema',
+      message: 'Você realmente deseja sair do sistema?',
+      rejectButtonProps: {
+        label: 'Voltar',
+        icon: 'pi pi-times',
+        outlined: true,
+        size: 'small',
+        severity: 'info'
+      },
+      acceptButtonProps: {
+        label: 'Sair',
+        icon: 'pi pi-check',
+        size: 'small',
+        severity: 'danger'
+      }
+    });
+  }
 }

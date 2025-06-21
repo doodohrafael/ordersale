@@ -5,11 +5,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { FloatLabel } from 'primeng/floatlabel';
 import { IftaLabelModule } from 'primeng/iftalabel';
 import { Select } from 'primeng/select';
-import { Toolbar } from 'primeng/toolbar';
 
 @Component({
   selector: 'os-register-product',
-  imports: [DashboardComponent, SharedImports, FloatLabel, IftaLabelModule, Select, Toolbar],
+  imports: [DashboardComponent, SharedImports, FloatLabel, IftaLabelModule, Select],
   standalone: true,
   templateUrl: './register-product.component.html',
   styleUrl: './register-product.component.scss'
