@@ -6,6 +6,6 @@
     <ng-template #center>
     </ng-template>
     <ng-template #end>
-        <p-button label="Ver produtos" icon="pi pi-search" severity="warn" />
+        <p-button [label]="nameBtnSearch" icon="pi pi-search" severity="warn" (onClick)="navigateSearch()" />
     </ng-template>
 </p-toolbar>

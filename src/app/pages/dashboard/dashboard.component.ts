@@ -1,17 +1,26 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
 import { DashboardHeaderComponent } from '../dashboard-header/dashboard-header.component';
 import { PanelButtonsRegisterComponent } from "../panel-buttons-register/panel-buttons-register.component";
+import { PanelButtonsSearchComponent } from '../panel-buttons-search/panel-buttons-search.component';
 
 @Component({
   selector: 'os-dashboard',
-  imports: [MenuComponent, DashboardHeaderComponent, PanelButtonsRegisterComponent],
+  imports: [MenuComponent, DashboardHeaderComponent, PanelButtonsRegisterComponent, PanelButtonsSearchComponent],
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  
+  @Input() nameScreen: string = "";
+  @Input() nameBtnSearch: string = "";
+  @Input() navigateToSearch: string = "";
+  @Input() navigateToRegister: string = "";
+  
+  ngOnInit(): void {
+    console.log(this.navigateToSearch);
+  }
 
-  @Input() nameScreen: string = "Dashboard";
 
 }

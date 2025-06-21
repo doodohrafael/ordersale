@@ -6,10 +6,20 @@
             <os-menu></os-menu>
         </div>
         
-        <div class="dashboard-main">
-            <os-panel-buttons-register></os-panel-buttons-register>
-            <ng-content></ng-content>  <!-- Conteúdo inserido aqui (como o formulário) -->
-        </div>
+        @if(!navigateToSearch) {
+            <div class="dashboard-main">
+                <os-panel-buttons-search [navigateToRegister]="navigateToRegister"></os-panel-buttons-search>
+                <ng-content>aaaaaaaaaaaaaaaaaa</ng-content>  <!-- Conteúdo inserido aqui (como o formulário) -->
+            </div>
+        }
+
+        <!-- search -->
+        @if(navigateToSearch) {
+            <div class="dashboard-main">
+                <os-panel-buttons-register [nameBtnSearch]="nameBtnSearch" [navigateToSearch]="navigateToSearch"></os-panel-buttons-register>
+                <ng-content></ng-content>  <!-- Conteúdo inserido aqui (como o formulário) -->
+            </div>
+        }
     </div>
 
 </div>
