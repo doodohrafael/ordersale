@@ -1,3 +1,57 @@
-.test {
-    border: red solid 1px !important;
+.p-grid {
+  gap: 1rem;
+}
+
+.space-fields-form {
+    margin-bottom: 10px;
+}
+
+.name {
+    width: 90%;
+}
+
+.sku {
+    width: 10%;
+}
+
+.category {
+    width: 60%;
+}
+
+.subcategory {
+    width: 40%;
+}
+
+/* Container principal */
+.form-container {
+    width: 100%;
+}
+
+/* Linha de campos */
+.fields-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px; /* Espaço entre os campos */
+}
+
+/* Cada campo individual */
+.field-item {
+    min-width: 100px; /* Largura mínima para cada campo */
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .field-item {
+        flex: 100%; /* Campos empilhados em mobile */
+    }
+}
+
+::ng-deep .p-toolbar {
+    margin-bottom: 10px !important;
+}
+
+.btn-new {
+    margin-right: 10px;
 }

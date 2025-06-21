@@ -1,7 +1,50 @@
 <os-dashboard [nameScreen]="'Cadastrar Produto'">
-    <form [formGroup]="formRegisterProduct">
-        <div class="card flex justify-center">
-            <input type="text" pInputText formControlName="name" placeholder="Nome do produto" />
+
+    <p-toolbar class="toolbar-buttons">
+        <ng-template class="toolbar-buttons" #start>
+            <p-button class="btn-new" severity="info" icon="pi pi-plus" label="Novo" badgeSeverity='danger' />
+            <p-button label="Salvar" icon="pi pi-save" />
+        </ng-template>
+        <ng-template #center>
+        </ng-template>
+        <ng-template #end>
+            <p-button label="Ver produtos" icon="pi pi-search" severity="warn" />
+        </ng-template>
+    </p-toolbar>
+
+    <form [formGroup]="formRegisterProduct" class="form-container">
+        <div class="fields-row">
+            <p-iftalabel variant="in" class="field-item">
+                <input pInputText id="sku" formControlName="sku" autocomplete="off" />
+                <label for="sku">SKU</label>
+            </p-iftalabel>
         </div>
+
+        <p-iftalabel variant="in" class="field-item ">
+            <input pInputText id="name" formControlName="name" autocomplete="off" class="name" />
+            <label for="name">Nome do produto</label>
+        </p-iftalabel>
+        
+        <div class="fields-row">
+            <p-iftalabel variant="in" class="field-item">
+                <input pInputText id="unitValue" formControlName="unitValue" autocomplete="off" />
+                <label for="unitValue">Valor</label>
+            </p-iftalabel>
+
+            <p-iftalabel variant="in" class="field-item">
+                <input pInputText id="quantityStock" formControlName="quantityStock" autocomplete="off" />
+                <label for="quantityStock">Estoque</label>
+            </p-iftalabel>
+        </div>
+        
+        <p-floatlabel class="w-full md:w-56" variant="in" class="field-item ">
+            <p-select formControlName="category" inputId="in_label" [options]="categories" optionLabel="name" styleClass="w-full category" variant="filled" />
+            <label for="in_label">Selecione uma categoria</label>
+        </p-floatlabel>
+        <p-floatlabel class="w-full md:w-56" variant="in" class="field-item ">
+            <p-select formControlName="subCategory" inputId="subCategory" [options]="categories" optionLabel="name" styleClass="w-full subcategory" variant="filled" />
+            <label for="subCategory">Selecione uma Subcategoria</label>
+        </p-floatlabel>
+
     </form>
 </os-dashboard>
