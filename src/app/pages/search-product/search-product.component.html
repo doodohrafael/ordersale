@@ -1,3 +1,18 @@
 <os-dashboard [nameScreen]="'Buscar Produtos'"  [navigateToSearch]="''" [navigateToRegister]="'/register-product'">
-    buscar produtossad
+    <form [formGroup]="formSearchProduct" class="form-container">
+        <h4>Filtrar</h4>
+        <p-iftalabel variant="in" class="field-item">
+            <input pInputText id="sku" formControlName="sku" autocomplete="off" />
+            <label for="sku">SKU</label>
+        </p-iftalabel>
+        
+        <p-iftalabel variant="in" class="field-item ">
+            <input pInputText id="name" formControlName="name" autocomplete="off" class="name" />
+            <label for="name">Nome do produto</label>
+        </p-iftalabel>
+        
+        <div class="fields-rows">
+            <p-button class="btn-search" severity="warn" icon="pi pi-search" label="Buscar" badgeSeverity='danger' />
+        </div>
+    </form>
 </os-dashboard>
