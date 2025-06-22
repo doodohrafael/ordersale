@@ -1,3 +1,29 @@
 ::ng-deep .p-toolbar {
     margin-bottom: 10px !important;
 }
+
+/* Linha de campos */
+.fields-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px; /* Espaço entre os campos */
+}
+
+/* Cada campo individual */
+.field-item {
+    // min-width: 100px; /* Largura mínima para cada campo */
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.name {
+    width: 60% !important;
+}
+
+.sku {
+    width: 10% !important;
+}
+
+.btn-search {
+    margin-top: 19px;
+}
