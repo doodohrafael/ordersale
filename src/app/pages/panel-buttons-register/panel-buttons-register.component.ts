@@ -1,12 +1,12 @@
 import { Component, inject, Input } from '@angular/core';
-import { SharedImports } from '../../shared/shared-imports';
 import { IftaLabelModule } from 'primeng/iftalabel';
 import { Toolbar } from 'primeng/toolbar';
 import { Router } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'os-panel-buttons-register',
   standalone: true,
-  imports: [SharedImports, IftaLabelModule, Toolbar],
+  imports: [ButtonModule, IftaLabelModule, Toolbar],
   templateUrl: './panel-buttons-register.component.html',
   styleUrl: './panel-buttons-register.component.scss'
 })
@@ -19,7 +19,6 @@ export class PanelButtonsRegisterComponent {
 
   public navigateSearch(): void {
     this.router.navigate([this.navigateToSearch]);
-    // this.navigateToSearch = '';
   }
 
 }
