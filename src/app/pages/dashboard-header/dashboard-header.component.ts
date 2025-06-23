@@ -1,5 +1,5 @@
 import { AvatarModule } from 'primeng/avatar';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { Toolbar } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -7,6 +7,7 @@ import { MenuItem, MessageService, ConfirmationService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialog } from 'primeng/confirmdialog';
 import { NgClass } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'os-dashboard-header',
@@ -19,6 +20,8 @@ import { NgClass } from '@angular/common';
 export class DashboardHeaderComponent implements OnInit {
 
   @Input() nameScreen: string = "";
+
+  private router: Router = inject(Router);
   public items: MenuItem[] = [];
 
   constructor(private confirmationService: ConfirmationService, private messageService: MessageService) { }
@@ -71,7 +74,14 @@ export class DashboardHeaderComponent implements OnInit {
         icon: 'pi pi-check',
         size: 'small',
         severity: 'danger'
+      },
+      accept: () => {
+        this.router.navigate(['/login']);
       }
     });
+  }
+
+  private navigateToRegister() {
+    this.router.navigate(['/register-product']);
   }
 }

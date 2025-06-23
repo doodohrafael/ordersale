@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { PanelMenu } from 'primeng/panelmenu';
 
@@ -11,7 +12,9 @@ import { PanelMenu } from 'primeng/panelmenu';
 })
 export class MenuComponent implements OnInit {
 
-  items: MenuItem[] = [];
+  private router: Router = inject(Router);
+
+  public items: MenuItem[] = [];
 
   ngOnInit() {
     this.items = [
@@ -49,11 +52,13 @@ export class MenuComponent implements OnInit {
         items: [
           {
             label: 'Cadastrar produto',
-            icon: 'pi pi-plus'
+            icon: 'pi pi-plus',
+            command: () => this.navigateToRegisterProduct(),
           },
           {
             label: 'Ver produtos',
-            icon: 'pi pi-list'
+            icon: 'pi pi-list',
+            command: () => this.navigateToSearchProduct(),
           }
         ]
       },
@@ -72,6 +77,14 @@ export class MenuComponent implements OnInit {
         ]
       },
     ]
+  }
+
+  private navigateToRegisterProduct() {
+    this.router.navigate(['/register-product']);
+  }
+
+  private navigateToSearchProduct() {
+    this.router.navigate(['/search-product']);
   }
 
 }
