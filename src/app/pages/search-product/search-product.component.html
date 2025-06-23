@@ -7,12 +7,30 @@
         </p-iftalabel>
         
         <div class="same-line">
-        <p-iftalabel variant="in" class="field-item ">
-            <input pInputText id="name" formControlName="name" autocomplete="off" class="name" />
-            <label for="name">Nome do produto</label>
-        </p-iftalabel>
-        
+            <p-iftalabel variant="in" class="field-item ">
+                <input pInputText id="name" formControlName="name" autocomplete="off" class="name" />
+                <label for="name">Nome do produto</label>
+            </p-iftalabel>
             <p-button class="btn-search" severity="warn" icon="pi pi-search" label="Buscar" badgeSeverity='danger' />
         </div>
+
+        <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template #header>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-product>
+                <tr>
+                    <td>{{ product.code }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.quantity }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
     </form>
 </os-dashboard>

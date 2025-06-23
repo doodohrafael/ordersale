@@ -31,7 +31,8 @@
 .same-line {
     display: flex;
     align-items: flex-end;  /* Alinha os itens na base (útil para inputs e botões) */
-    gap: 16px;             /* Espaçamento entre os elementos */
+    gap: 16px;    
+    margin-bottom: 15px;         /* Espaçamento entre os elementos */
 }
 
 .field-item {
