@@ -14,7 +14,13 @@
             <p-button class="btn-search" severity="warn" icon="pi pi-search" label="Buscar" badgeSeverity='danger' />
         </div>
 
-        <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+        <p-table 
+            [value]="products" 
+            [tableStyle]="{ 'min-width': '50rem' }"
+            [paginator]="true"
+            [rows]="5"
+            [rowsPerPageOptions]="[5, 10, 20]"
+        >
             <ng-template #header>
                 <tr>
                     <th>Code</th>
