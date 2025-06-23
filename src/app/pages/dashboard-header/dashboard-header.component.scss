@@ -10,41 +10,34 @@
   border-radius: 0px !important;
 }
 
-::ng-deep .p-panelmenu-panel:hover {
-}
-
-::ng-deep .p-panelmenu-header-link {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white !important;
-    margin-top: -1px;
-}
-
-::ng-deep .p-panelmenu-header-link:hover {
-    border: #2575fc solid 1px;
-}
-
 ::ng-deep .p-button-icon-only.p-button-rounded {
     margin-top: 10px;
     margin-left: 25px;
 }
 
-::ng-deep .p-panelmenu-item-link {
-    color: #000 !important;
-}
+// ::ng-deep .p-panelmenu-header-link {
+//     background: linear-gradient(to right, #6a11cb, #2575fc);
+//     color: white !important;
+//     margin-top: -1px;
+// }
 
-::ng-deep .p-panelmenu-item-link:hover {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: #fff !important;
-}
+// ::ng-deep .p-panelmenu-header-link:hover {
+//     border: #2575fc solid 1px;
+// }
 
-::ng-deep .p-panelmenu-submenu-icon {
-    color: #000 !important;
-}
+// ::ng-deep .p-panelmenu-item-link {
+//     color: #000 !important;
+// }
 
-::ng-deep .p-panelmenu-submenu-icon:hover {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-}
+// ::ng-deep .p-panelmenu-item-link:hover {
+//     background: linear-gradient(to right, #6a11cb, #2575fc);
+//     color: #fff !important;
+// }
 
-// ::ng-deep .p-panelmenu-submenu:hover {
+// ::ng-deep .p-panelmenu-submenu-icon {
+//     color: #000 !important;
+// }
+
+// ::ng-deep .p-panelmenu-submenu-icon:hover {
 //     background: linear-gradient(to right, #6a11cb, #2575fc);
 // }
