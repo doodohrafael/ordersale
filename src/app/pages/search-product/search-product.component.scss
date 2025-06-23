@@ -10,11 +10,11 @@
 }
 
 /* Cada campo individual */
-.field-item {
-    // min-width: 100px; /* Largura mínima para cada campo */
-    margin-bottom: 10px;
-    margin-right: 10px;
-}
+// .field-item {
+//     // min-width: 100px; /* Largura mínima para cada campo */
+//     margin-bottom: 10px;
+//     margin-right: 10px;
+// }
 
 .name {
     width: 60% !important;
@@ -26,4 +26,18 @@
 
 .btn-search {
     margin-top: 19px;
+}
+
+.same-line {
+    display: flex;
+    align-items: flex-end;  /* Alinha os itens na base (útil para inputs e botões) */
+    gap: 16px;             /* Espaçamento entre os elementos */
+}
+
+.field-item {
+    flex: 1;               /* Faz o campo "Nome do produto" ocupar o espaço disponível */
+}
+
+.btn-search {
+    margin-bottom: 8px;    /* Ajuste fino para alinhar com o input */
 }
