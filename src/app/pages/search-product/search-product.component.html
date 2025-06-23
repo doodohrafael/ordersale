@@ -23,10 +23,11 @@
         >
             <ng-template #header>
                 <tr>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Quantity</th>
+                    <th>SKU</th>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                    <th>Quantidade</th>
                 </tr>
             </ng-template>
             <ng-template #body let-product>
@@ -34,6 +35,7 @@
                     <td>{{ product.code }}</td>
                     <td>{{ product.name }}</td>
                     <td>{{ product.category }}</td>
+                    <td>{{ product.valueUnity }}</td>
                     <td>{{ product.quantity }}</td>
                 </tr>
             </ng-template>

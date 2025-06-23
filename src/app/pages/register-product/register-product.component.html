@@ -19,10 +19,11 @@
         
         <div class="fields-row">
             <p-iftalabel variant="in" class="field-item">
-                <input pInputText id="unitValue" formControlName="unitValue" autocomplete="off" />
+                <!-- <input pInputText id="unitValue" formControlName="unitValue" autocomplete="off" /> -->
+                <p-inputnumber formControlName="unitValue" inputId="price_input" mode="currency" currency="BRL" locale="pt-BR" />
                 <label for="unitValue">Valor</label>
             </p-iftalabel>
-
+            
             <p-iftalabel variant="in" class="field-item">
                 <input pInputText id="quantityStock" formControlName="quantityStock" autocomplete="off" />
                 <label for="quantityStock">Estoque</label>
