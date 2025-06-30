@@ -24,7 +24,8 @@ export class MenuComponent implements OnInit {
         items: [
           {
             label: 'Cadastrar pedido',
-            icon: 'pi pi-plus'
+            icon: 'pi pi-plus',
+            command: () => this.navigateToRegisterOrder(),
           },
           {
             label: 'Histórico de pedidos',
@@ -85,6 +86,10 @@ export class MenuComponent implements OnInit {
 
   private navigateToSearchProduct() {
     this.router.navigate(['/search-product']);
+  }
+
+  private navigateToRegisterOrder() {
+    this.router.navigate(['/register-order']);
   }
 
 }
