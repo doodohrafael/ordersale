@@ -5,11 +5,19 @@
         <div class="divisor-menu">
             <os-menu></os-menu>
         </div>
-        
+
         <div class="dashboard-main">
-            <os-panel-buttons-search *ngIf="!navigateToSearch" [navigateToRegister]="navigateToRegister"></os-panel-buttons-search>
-            <os-panel-buttons-register *ngIf="navigateToSearch" [navigateToSearch]="navigateToSearch" [nameBtnSearch]="nameBtnSearch"></os-panel-buttons-register>
+            <os-panel-buttons-search 
+                *ngIf="!navigateToSearch"
+                [navigateToRegister]="navigateToRegister"
+            ></os-panel-buttons-search>
             
+            <os-panel-buttons-register 
+                *ngIf="navigateToSearch && isStandardRegistrationScreen"
+                [navigateToSearch]="navigateToSearch" 
+                [nameBtnSearch]="nameBtnSearch"
+            ></os-panel-buttons-register>
+
             <ng-content></ng-content>
         </div>
     </div>
