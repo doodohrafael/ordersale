@@ -1,0 +1,142 @@
+<os-dashboard 
+    [nameScreen]="'Fazer Pedido'" 
+    [nameBtnSearch]="'Histórico de pedidos'" 
+    [navigateToSearch]="'/search-product'" 
+>
+    <form [formGroup]="formRegisterOrder" class="form-container">
+        <div class="fields-row">
+            <p-card class="order-item">
+                <div class="order-display">
+                    <span class="order-number-label">Pedido: </span>
+                    <span class="order-number">{{ '#19' }}</span>
+                </div>
+            </p-card>
+
+            <p-card class="order-item">
+                <div class="order-display">
+                    <span class="order-number-label">Status: </span>
+                    <span class="order-estimate">{{ 'Orçamento' }}</span>
+                </div>
+            </p-card>
+
+            <p-card class="order-item">
+                <div class="order-display">
+                    <span class="order-number-label">Data do pedido: </span>
+                    <span class="order-estimate">{{ '26/06/2025' }}</span>
+                </div>
+            </p-card>
+        </div>
+
+        <div class="fields-row">
+            <p-iftalabel class="w-full md:w-56 order-item">
+                <p-select 
+                    formControlName="selectedClient" 
+                    inputId="clientId" 
+                    [options]="clients" 
+                    optionLabel="name" 
+                    styleClass="w-full" 
+                    placeholder="Selecione o cliente" 
+                    [showClear]="true"
+                />
+                <label for="dd-city">Cliente</label>
+            </p-iftalabel>
+
+            <p-iftalabel class="w-full md:w-56 order-item">
+                <p-select 
+                    formControlName="selectedPayment" 
+                    inputId="paymentId" 
+                    [options]="payments" 
+                    optionLabel="name" 
+                    styleClass="w-full" 
+                    placeholder="Selecione um tipo de pagamento" 
+                    [showClear]="true"
+                />
+                <label for="paymentId">Forma de pagamento</label>
+            </p-iftalabel>
+
+            <p-iftalabel variant="in" class="order-item">
+                <p-inputnumber formControlName="shippingCosts" inputId="shippingCostsId" mode="currency" currency="BRL" locale="pt-BR" />
+                <label for="shippingCostsId">Valor do frete</label>
+            </p-iftalabel>
+
+            <p-iftalabel variant="in" class="order-item">
+                <p-inputnumber formControlName="discountAmount" inputId="discountAmountId" mode="currency" currency="BRL" locale="pt-BR" />
+                <label for="discountAmountId">Valor do desconto</label>
+            </p-iftalabel>
+        </div>
+
+    <!-- Tabela de itens  -->
+        <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template #header>
+                <tr>
+                    <th>SKU</th>
+                    <th>Produto</th>
+                    <th>Valor unitário</th>
+                    <th>Quantidade</th>
+                    <th>Em estoque</th>
+                    <th>Valor total</th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-product>
+                <tr>
+                    @if(product.sku === '0') {
+                        <td style="width: 0px;">
+                            <p-autocomplete formControlName="selectedCountry" (completeMethod)="filterCountry($event)" field="name" />
+                        </td>
+                    } @else {
+                        <td>{{ product.sku }}</td>
+                    }
+
+                    @if(product.name === '0') {
+                        <td>
+                            <p-autocomplete formControlName="selectedCountry" (completeMethod)="filterCountry($event)" field="name" />
+                        </td>
+                    } @else {
+                        <td>{{ product.name }}</td>
+                    }
+
+                    @if(product.unitValue === '0') {
+                        <td></td>
+                    } @else {
+                        <td>{{ product.unitValue }}</td>
+                    }
+
+                    <td>
+                        <input type="text" pInputText formControlName="quantity" />
+                    </td>
+                     
+                    @if(product.stock === '0') {
+                        <td></td>
+                    } @else {
+                        <td>{{ product.stock }}</td>
+                    }
+
+                    @if(product.totalValue === '0') {
+                        <td></td>
+                    } @else {
+                        <td>{{ product.totalValue }}</td>
+                    }
+
+                    @if(product.sku !== '0') {
+                        <td>
+                             <p-button icon="pi pi-times" [raised]="true" [rounded]="true" [text]="true" severity="danger" (onClick)="removeItem()" />
+                        </td>
+                    } @else {
+                        <td></td>
+                    } 
+                </tr>
+            </ng-template>
+            <ng-template #footer>
+                <tr>
+                    <td colspan="3"></td>
+                    <td></td>
+                    <td><b>Subtotal: </b></td>
+                    <td>{{ 'R$245,99' }}</td>
+                    <td></td>
+                </tr>
+            </ng-template>
+            
+        </p-table>
+    </form>
+</os-dashboard>

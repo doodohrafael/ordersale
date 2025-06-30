@@ -26,7 +26,7 @@ export class RegisterProductComponent implements OnInit {
     quantityStock: new FormControl(''),
     category: new FormControl(null),
     subCategory: new FormControl(null),
-  });;
+  });
 
   ngOnInit() {
     this.items = [

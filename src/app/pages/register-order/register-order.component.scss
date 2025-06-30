@@ -1,0 +1,90 @@
+.p-grid {
+  gap: 1rem;
+}
+
+.space-fields-form {
+    margin-bottom: 10px;
+}
+
+.name {
+    width: 90%;
+}
+
+.sku {
+    width: 10%;
+}
+
+.category {
+    width: 60%;
+}
+
+.subcategory {
+    width: 40%;
+}
+
+/* Container principal */
+.form-container {
+    width: 100%;
+}
+
+/* Linha de campos */
+.fields-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px; /* Espaço entre os campos */
+    margin-bottom: 10px;
+}
+
+/* Cada campo individual */
+.field-item {
+    min-width: 100px; /* Largura mínima para cada campo */
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .field-item {
+        flex: 100%; /* Campos empilhados em mobile */
+    }
+}
+
+::ng-deep .p-toolbar {
+    margin-bottom: 10px !important;
+}
+
+
+// ---- Card do número do pedido
+
+.field-container, .order-number-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.value, .order-number-display-value {
+  font-weight: bold;
+  color: var(--primary-color);
+  
+}
+
+.order-number-label {
+    font-size: 1.8rem;  /* Aumentei o tamanho */
+    font-weight: bold;  /* Adicionei negrito */
+    color: #333;       /* Cor mais escura */
+}
+
+.order-number {
+    font-size: 1.6rem;
+}
+
+.order-estimate {
+    font-size: 1.6rem;
+}
+
+.order-item {
+    padding-right: 0.2rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
