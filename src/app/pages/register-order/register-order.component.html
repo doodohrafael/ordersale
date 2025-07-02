@@ -3,7 +3,7 @@
     [nameBtnSearch]="'Histórico de pedidos'" 
     [navigateToSearch]="'/search-product'" 
 >
-    <form [formGroup]="formRegisterOrder" class="form-container">
+    <!-- <form [formGroup]="formRegisterOrder" class="form-container">
         <div class="fields-row">
             <p-card class="order-item">
                 <div class="order-display">
@@ -74,7 +74,6 @@
             <p-tabpanels>
                 <p-tabpanel value="0">
                     <p class="m-0">
-                        <!-- Tabela de itens  -->
                         <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
                             <ng-template #header>
                                 <tr>
@@ -203,13 +202,6 @@
                     </div>
                 </p-tabpanel>
 
-                <!-- <div class="fields-row">
-                    <p-iftalabel variant="in" class="field-item">
-                        <input pInputText id="complement" formControlName="complement" autocomplete="off" class="complement" />
-                        <label for="complement">Complemento</label>
-                    </p-iftalabel>
-                </div> -->
-
                 <p-tabpanel value="2">
                     <p class="m-0">
                         <textarea rows="5"cols="30" pTextarea [autoResize]="true"></textarea>
@@ -218,5 +210,5 @@
             </p-tabpanels>
         </p-tabs>
 
-    </form>
+    </form> -->
 </os-dashboard>
