@@ -13,7 +13,7 @@
             ></os-panel-buttons-search>
             
             <os-panel-buttons-register 
-                *ngIf="navigateToSearch"
+                *ngIf="navigateToSearch && havePanelButtonsRegister"
                 [navigateToSearch]="navigateToSearch" 
                 [nameBtnSearch]="nameBtnSearch"
             ></os-panel-buttons-register>

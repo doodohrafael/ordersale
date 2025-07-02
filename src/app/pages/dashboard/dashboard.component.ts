@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   @Input() nameBtnSearch: string = "";
   @Input() navigateToSearch: string = "";
   @Input() navigateToRegister: string = "";
+  @Input() havePanelButtonsRegister: boolean = false;
 
   ngOnInit(): void {
     console.log(this.navigateToSearch);
