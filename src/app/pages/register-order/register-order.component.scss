@@ -14,13 +14,18 @@
     width: 10%;
 }
 
-.category {
-    width: 60%;
+.street {
+    width: 800px;
 }
 
-.subcategory {
-    width: 40%;
+.city {
+    width: 200px;
 }
+
+.complement {
+    width: 800px;
+}
+
 
 /* Container principal */
 .form-container {
@@ -32,7 +37,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1px; /* Espaço entre os campos */
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
 }
 
 /* Cada campo individual */

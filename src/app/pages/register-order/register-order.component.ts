@@ -8,6 +8,10 @@ import { Select } from 'primeng/select';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TableModule } from 'primeng/table';
 import { AutoComplete, AutoCompleteCompleteEvent } from 'primeng/autocomplete';
+import { TabsModule } from 'primeng/tabs';
+import { TextareaModule } from 'primeng/textarea';
+import { InputMaskModule } from 'primeng/inputmask';
+import { Toolbar } from 'primeng/toolbar';
 
 @Component({
   selector: 'os-register-order',
@@ -20,6 +24,10 @@ import { AutoComplete, AutoCompleteCompleteEvent } from 'primeng/autocomplete';
     InputNumberModule,
     TableModule,
     AutoComplete,
+    TabsModule,
+    TextareaModule,
+    InputMaskModule,
+    Toolbar
   ],
   templateUrl: './register-order.component.html',
   styleUrl: './register-order.component.scss'
@@ -34,14 +42,22 @@ export class RegisterOrderComponent implements OnInit {
   public formRegisterOrder: FormGroup = new FormGroup({
     selectedClient: new FormControl<any | null>(null),
     selectedPayment: new FormControl<any | null>(null),
-    shippingCosts: new FormControl(''),
-    discountAmount: new FormControl(''),
-    quantity: new FormControl(1),
+    shippingAmount: new FormControl<string>(''),
+    discountAmount: new FormControl<string>(''),
+    quantity: new FormControl<number>(1),
     selectedCountry: new FormControl(undefined),
-
+    selectedSearchProduct: new FormControl<any | null>(null),
+    deliveryDate: new FormControl<Date | null>(null),
+    street: new FormControl<string>(''),
+    zipCode: new FormControl<string>(''),
+    number: new FormControl<number | null>(null),
+    city: new FormControl<string>(''),
+    state: new FormControl<string>(''),
+    complement: new FormControl<string>(''),
   });
 
   ngOnInit() {
+    
     this.clients = [
       { name: 'Augusto Santos', code: 'NY' },
       { name: 'Gabriel Afonso', code: 'RM' },
@@ -76,15 +92,20 @@ export class RegisterOrderComponent implements OnInit {
     ];
   }
 
-  removeItem() {
+  public searchAddressByZipCode(): any {
+    console.log(this.formRegisterOrder.get('zipCode')?.value);
+    this.formRegisterOrder.get('street')?.setValue('Rua sebastiao amaral');
+  }
+
+  public removeItem(): void {
     throw new Error('Method not implemented.');
   }
 
-  filterCountry($event: AutoCompleteCompleteEvent) {
+  public getProduct($event: AutoCompleteCompleteEvent): void {
     console.log($event.query);
   }
 
-  search(event: AutoCompleteCompleteEvent) {
+  public search(event: AutoCompleteCompleteEvent): void {
     this.items = [...Array(10).keys()].map((item) => event.query + '-' + item);
   }
 
